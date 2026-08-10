@@ -1,0 +1,185 @@
+1 == compares same reference object 
+ .equales compare  same values of both objects 
+
+
+2. Explain OOP concepts with examples.
+
+3.  What are the differences between Abstract Class and Interface?
+
+4. Explain String, StringBuilder, and StringBuffer.
+
+  String is immutable, and string literals are stored in the String Constant Pool.
+
+StringBuilder is mutable, not synchronized, faster, and used in single-threaded environments.
+
+StringBuffer is mutable, synchronized (thread-safe), slower than StringBuilder, and used in multi-threaded environments.
+
+Both StringBuilder and StringBuffer have a default capacity of 16 characters.
+
+5 .What are Collections Framework and its main interfaces?
+  
+  Java Collections Framework is a set of classes and interfaces used to store and manipulate groups of objects.
+
+6 .Difference between HashMap and ConcurrentHashMap.
+
+HashMap is not thread-safe, allows one null key and multiple null values, and is used in single-threaded environments.
+
+ConcurrentHashMap is thread-safe, designed for multithreaded environments, 
+does not allow null keys or null values, and provides better performance than Hashtable by allowing concurrent access to different parts of the map.
+
+7 . Explain Exception Handling in Java.
+
+8 Java 8 introduced several features, including Lambda Expressions, Stream API, and Optional.
+
+Lambda Expressions help write concise code.
+Stream API is used to process collections efficiently using operations like filter, map, and collect.
+Optional is used to handle null values and avoid NullPointerException.
+
+
+
+
+spring boot 
+
+1. Spring Bean Lifecycle consists of the following phases:
+
+Bean Instantiation (object creation)
+Dependency Injection
+Initialization (@PostConstruct, init-method)
+Bean is ready for use
+Destruction (@PreDestroy, destroy-method)
+
+The Spring IoC Container manages the complete lifecycle of a bean from creation to destruction.
+
+Short Version (2 lines)
+
+Spring first creates the bean, injects dependencies, calls initialization methods,
+makes the bean available for use, and finally calls destruction methods when the container is closed.
+
+
+2 Dependency Injection 
+ Dependency Injection is a design pattern in which an object required by a class is created externally and 
+injected into the class instead of being created inside the class. It helps achieve loose coupling and better maintainability. 
+
+3 @Component, @Service, and @Repository are Spring stereotype annotations, and all of them create Spring beans.
+
+@Component is a generic bean annotation.
+@Service is used for business logic classes.
+@Repository is used for database access and persistence operations.
+
+Functionally all create beans, but they are used to indicate different layers of the application.
+
+
+
+
+4.Spring Boot configuration 
+Spring Boot Auto Configuration automatically configures the application based on the dependencies available in the classpath.
+ For example, if spring-boot-starter-web is added, Spring Boot automatically configures Tomcat, Spring MVC, and required beans.
+ Additionally, Spring Boot provides dependency management, which ensures compatible dependency versions without specifying versions manually.
+
+
+5 .Explain RESTful API development in Spring Boot.
+RESTful API development in Spring Boot is used to create web services that allow communication between applications. The main HTTP methods are:
+GET: Retrieve data from the database.
+POST: Create/save data.
+PUT: Update existing data.
+DELETE: Remove data.
+
+
+6 . Autowired  and  Constructor Injection ?
+Both @Autowired and Constructor Injection are used for Dependency Injection in Spring.
+
+@Autowired injects dependencies directly into fields, but it is harder to test and maintain.
+
+Constructor Injection injects dependencies through the constructor, makes dependencies explicit, 
+improves testability, supports immutable fields, and is the recommended approach in Spring Boot applications.
+
+7.Global exception 
+We handle exceptions globally by creating a class with @RestControllerAdvice or 
+@ControllerAdvice and defining methods annotated with @ExceptionHandler to handle specific exceptions across the application. ✅
+
+
+8 spring profiles.
+ Spring Profiles are used to maintain different configurations for different environments 
+ like dev, test, and prod, and load the appropriate beans based on the active profile. ✅
+
+
+9. Spring security.
+  Spring Security is used to secure Spring Boot applications by providing authentication and authorization.
+   JWT (JSON Web Token) is commonly used for stateless authentication. After successful login, the server generates a JWT token,
+ and the client sends this token with every request. Spring Security validates the token on each API call and grants access only if the token is valid.
+
+
+10. spring boot Actuator ?
+  Actuator is a Spring Boot feature used for monitoring and managing applications through endpoints such as health, metrics, and info.
+
+
+ microservices
+
+1.what is microservice 
+ "A large project is divided into multiple small independent projects (services), 
+ and all the services work together to form the complete application." ✅
+
+2 . advantages and dis advantages of microservices 
+Microservices is an architecture where a large application is divided into small independent services. 
+Its advantages include easy maintenance,independent deployment, better scalability, and faster development.
+Its disadvantages include increased complexity, higher infrastructure costs, network overhead, and challenges in monitoring, testing, and managing distributed services.
+
+3 Service Discovery using Eureka.
+"All microservices are handled in Eureka Server, and we can see in the Eureka dashboard whether a service is running or not."
+
+4. API gate way 
+ API Gateway is a single entry point for all microservices. It routes requests to the correct service and helps manage security, routing, and monitoring from one place.
+
+5 Circuit breaker ?
+ 
+6 HOW TO Services coumminate ?
+ Services communicate with each other using REST APIs. In Spring Boot microservices, 
+ Feign Client is often used to simplify REST communication between services. ✅
+
+7 How did you moniter  microservices?
+ We monitor microservices using Eureka Server, Spring Boot Actuator, Prometheus, 
+ and Grafana. Eureka shows service availability, and Actuator provides health and performance metrics. ✅
+
+
+------- sql 
+1.what are indexes?
+  Indexes are database objects used to improve the speed of data retrieval (SELECT queries).
+
+2
+
+ A Clustered Index stores the actual table data in the order of the index, so only one clustered index can exist per table.
+
+A Non-Clustered Index stores index information separately from the table and points to the actual data rows, so multiple non-clustered indexes can exist on a table.
+
+
+
+------React 
+
+1. What are React Hooks?
+   React Hooks are built-in functions that allow functional components to use state, lifecycle methods, and other React features without writing class components.
+
+2. diff state and props 
+
+State is data managed within a component and can be changed using setState or useState.
+
+Props are used to pass data from a parent component to a child component and are read-only.
+
+State is mutable, whereas Props are immutable.
+
+
+
+
+-------------------spring boot 
+
+1  Idempotency?
+Idempotency means that executing the same request multiple times produces the same result. 
+HTTP methods such as PUT and DELETE are generally idempotent, 
+whereas POST is typically not idempotent because it can create multiple resources when called repeatedly.
+
+
+2 how do you secure HTTP Api ?
+ REST APIs can be secured using authentication and authorization mechanisms such as JWT, OAuth2, Basic Authentication, and Spring Security.
+
+3 what is JWT?
+JWT (JSON Web Token) is a token-based authentication mechanism used to secure REST APIs. After a user successfully logs in, 
+the server generates a JWT token and sends it to the client. The client includes this token in every API request, and the server validates it before allowing access.

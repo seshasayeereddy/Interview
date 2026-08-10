@@ -1,0 +1,287 @@
+What is the difference between ArrayList and LinkedList?
+
+Answer:
+
+ArrayList uses a dynamic array internally.
+LinkedList uses a doubly linked list.
+ArrayList is faster for searching and reading.
+LinkedList is faster for insertion and deletion in the middle.
+What is the difference between HashSet and HashMap?
+
+Answer:
+
+HashSet stores only unique values.
+HashMap stores key-value pairs.
+HashSet internally uses HashMap.
+What happens if two objects have the same hashCode?
+
+Answer: Both objects will be stored in the same bucket. HashMap uses equals() to distinguish between them.
+
+What is the difference between checked and unchecked exceptions?
+
+Answer:
+
+Checked Exceptions are checked at compile time (IOException, SQLException).
+Unchecked Exceptions occur at runtime (NullPointerException, ArithmeticException).
+Why is String immutable?
+
+Answer:
+
+Security
+Thread safety
+String Constant Pool optimization
+HashMap key reliability
+Spring Boot
+What is IoC (Inversion of Control)?
+
+Answer: IoC means Spring manages object creation and dependencies instead of developers creating objects manually.
+
+What is the difference between BeanFactory and ApplicationContext?
+
+Answer:
+
+BeanFactory provides basic IoC features.
+ApplicationContext provides advanced features like AOP, Events, Internationalization, and BeanFactory functionalities.
+What is the difference between @Controller and @RestController?
+
+Answer:
+
+@Controller returns View (JSP/HTML).
+@RestController returns JSON/XML response directly.
+What is the difference between @PathVariable and @RequestParam?
+Java
+1
+@GetMapping("/users/{id}")
+2
+public User getUser(@PathVariable Long id)
+Show more lines
+Java
+1
+@GetMapping("/users")
+2
+public User getUser(@RequestParam Long id)
+Show more lines
+PathVariable → value from URL path.
+RequestParam → value from query parameter.
+What is Spring Boot Starter?
+
+Answer: A starter is a predefined dependency package.
+
+Example:
+
+XML
+1
+spring-boot-starter-web
+2
+spring-boot-starter-data-jpa
+Show more lines
+
+It automatically brings required dependencies.
+
+Microservices
+What is Circuit Breaker?
+
+Answer: Circuit Breaker prevents repeated calls to a failed service.
+
+Example:
+
+Payment Service is down.
+Order Service stops calling it temporarily.
+Fallback response is returned.
+
+Typically implemented using:
+
+Resilience4j
+Hystrix (older)
+Difference between Monolithic and Microservices
+Monolithic	MicroservicesSingle application	Multiple services
+Single deployment	Independent deployment
+Difficult scaling	Easy scaling
+Tightly coupled	Loosely coupled
+What is Feign Client?
+
+Answer: Feign Client simplifies REST communication.
+
+Java
+1
+@FeignClient(name="employee-service")
+2
+public interface EmployeeClient {
+3
+ 
+4
+@GetMapping("/employees/{id}")
+5
+Employee getEmployee(@PathVariable Long id);
+6
+}
+Show more lines
+
+No need to write RestTemplate code.
+
+SQL
+What is Normalization?
+
+Answer: Normalization reduces data redundancy.
+
+Forms:
+
+1NF
+2NF
+3NF
+BCNF
+Difference between WHERE and HAVING?
+WHERE filters rows before grouping.
+HAVING filters groups after grouping.
+Difference between Primary Key and Foreign Key?
+
+Answer:
+
+Primary Key uniquely identifies a record.
+Foreign Key establishes relationship between tables.
+What is a Composite Key?
+
+Answer: Combination of multiple columns used as a primary key.
+
+SQL
+1
+PRIMARY KEY(student_id, course_id)
+Show more lines
+React
+What is Virtual DOM?
+
+Answer: Virtual DOM is a lightweight copy of the real DOM.
+
+React:
+
+Updates Virtual DOM.
+Compares old and new Virtual DOM.
+Updates only changed elements in real DOM.
+
+This improves performance.
+
+What is useEffect?
+JavaScript
+1
+useEffect(() => {
+2
+fetchData();
+3
+}, []);
+Show more lines
+
+Used for:
+
+API calls
+Subscriptions
+Timers
+Side effects
+What is Redux?
+
+Answer: Redux is a state management library used to share application state across components.
+
+Components:
+
+Store
+Action
+Reducer
+REST API
+Difference between PUT and PATCH?
+
+PUT Updates entire resource.
+
+PATCH Updates only specific fields.
+
+Example:
+
+JSON
+1
+PUT /employee/1
+2
+{
+3
+"id":1,
+4
+"name":"John",
+5
+"salary":5000
+6
+}
+Show more lines
+JSON
+1
+PATCH /employee/1
+2
+{
+3
+"salary":7000
+4
+}
+Show more lines
+Common HTTP Status Codes
+Code	Meaning200	Success
+201	Created
+400	Bad Request
+401	Unauthorized
+403	Forbidden
+404	Not Found
+500	Internal Server Error
+Scenario Based Questions
+How did you improve application performance?
+
+Sample Answer:
+
+In one project, APIs were taking 5-6 seconds due to database bottlenecks. I analyzed slow queries, added indexes, implemented pagination, and introduced caching. Response time reduced to less than 1 second.
+
+How did you handle production issues?
+
+Sample Answer:
+
+I checked application logs using Splunk/ELK, reviewed Actuator health endpoints, analyzed database queries, identified the root cause, fixed the issue, tested it, and deployed a hotfix.
+
+Describe your current project.
+
+Sample Answer:
+
+I work on a Microservices-based application developed using Java 17, Spring Boot, Spring Security, JWT, JPA, SQL Server, React, and Azure. I develop REST APIs, implement business logic, integrate microservices using Feign Client, write unit tests, support deployments, and resolve production issues.
+
+Frequently Asked "Tell Me About Your Project"
+
+Architecture Flow:
+
+Plain Text
+1
+React UI
+2
+|
+3
+API Gateway
+4
+|
+5
+Microservices
+6
+|
+7
+Feign Client
+8
+|
+9
+Database (SQL Server)
+10
+|
+11
+Redis Cache
+Show more lines
+
+Be ready to explain:
+
+Number of microservices
+Authentication flow using JWT
+API Gateway
+Eureka
+Feign Client
+Database design
+Production support
+CI/CD pipeline
+Azure deployment
