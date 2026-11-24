@@ -1,0 +1,53 @@
+ 
+
+
+TRICK TO REMEMBER
+
+1xx = Information
+
+100 - continue            => server says continue sending data 
+101 - switching protocals => HTTP to WebSocket
+
+2xx = Success
+
+200 - ok                 => request send sucessfully 
+201 - created            => new resources created sucessfully
+202 - Accepted           => request accepetedd but not completed yet
+204 - no content         => request send but no data return 
+
+3xx = Redirect
+
+301 - permanently moved          => the URL is changed permanently. 
+302 - Found(temporary redirect)  => the URL changeed temporarily.
+304 - NotModified                => Browser can used cached response 
+
+4xx = Client Mistake
+
+400 -> Bad Request              => Wrong request send by client  eg(value instead of  String )
+401 -> UnAuthorized             => Authentication required (login needed)
+403 -> ForBidden                => login but not permission 
+404 -> Not Found                => url or resource not exist's
+405 -> Method not allowed       => using wrong http method eg:(put instead get)
+408 -> Request Timeout          => client took too long 
+409 -> Conflict                 => duplicate data or resource conflict
+415 -> Unsupported Media Type   => wrong content-Type.
+429 -> Too Many Request's       => Rate limit exceeded. 
+
+
+
+5xx = Server Mistake
+
+500 -> Internal Server Error   =>unException error like null point error 
+501 -> Not Implemented         =>
+502 -> Bad Gateway             =>
+503 -> Service unAvailable     =>service unavailable (Server maintaince)server down 
+504 -> Gateway Timeout         => Server not respondoing 
+
+
+404 = Not Found
+401 = Not Logged In
+403 = No Permission
+500 = Server Error
+503 = Server Down
+301 = Permanent Redirect
+302 = Temporary Redirect
