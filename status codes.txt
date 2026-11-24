@@ -51,3 +51,39 @@ TRICK TO REMEMBER
 503 = Server Down
 301 = Permanent Redirect
 302 = Temporary Redirect
+
+ 
+
+INTERVIEW FAVORITES
+
+200 = Request Successful
+201 = Resource Created
+204 = Success, No Response Body
+
+400 = Bad Request
+401 = Not Logged In / Invalid Token
+403 = Logged In But No Permission
+404 = Resource Not Found
+409 = Duplicate Data / Conflict
+429 = Too Many Requests
+
+500 = Internal Server Error
+502 = Bad Gateway
+503 = Server Down / Maintenance
+504 = Dependent Service Timeout
+
+301 = Permanent Redirect
+302 = Temporary Redirect
+304 = Use Browser Cache
+
+
+EASY MEMORY
+
+401 = Who are you? (Authentication)
+403 = I know you, but you can't access it (Authorization)
+404 = I can't find it
+409 = Already exists
+429 = Slow down
+500 = My code broke
+503 = Server is unavailable
+504 = Another server didn't respond
